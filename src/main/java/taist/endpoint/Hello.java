@@ -9,7 +9,11 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import com.google.inject.Inject;
+
 import taist.HelloPojo;
+import taist.templates.TemplateFactory;
+import taist.templates.TemplateKey;
 
 
 /**
@@ -19,6 +23,9 @@ import taist.HelloPojo;
  */
 @Path("/hello")
 public class Hello {
+  @Inject
+  private TemplateFactory templates;
+  
   /**
    * 
    * @return Return the HelloPojo serialized in json
@@ -37,6 +44,6 @@ public class Hello {
   @Produces(MediaType.TEXT_HTML)
   @Path("/world")
   public String world() {
-    return "<!DOCTYPE html>\n<html><head><meta charset=\"utf-8\"><title>Plop</title></head><body><h1>Hello World!</h1></body></html>";
+    return templates.get(TemplateKey.get("page", "blank")).render();
   }
 }

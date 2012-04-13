@@ -4,4 +4,4 @@ build
 .project
 .settings
 bin
-libs/*.jar
+lib/*.jar
