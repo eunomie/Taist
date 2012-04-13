@@ -1,10 +1,10 @@
-Eunomie
+Taist
 =======
 
 Description
 -----------
 
-Eunomie is an experimentation of web application using
+Taist is an experimentation of web application using
 cool technologies like :
 
 * guice (DI)
